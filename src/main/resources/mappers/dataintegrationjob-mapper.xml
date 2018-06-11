@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.h3c.bigdata.sc.model.DataIntegrationJob">
+
+	<!-- 获取所有记录记录，不做任何过滤和排序 -->
+    <select id="selectAllDataIntegrationJob" resultType="DataIntegrationJob">
+        select * from fact_etljob;
+    </select>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.h3c.bigdata.sc.model.DataSet">
+
+	<!-- 获取所有记录记录，不做任何过滤和排序 -->
+    <select id="selectAllDataSet" resultType="DataSet">
+        select a.datasetId,description,owner,administrator,location,dataSize,dataNumber,createDate,updateDate,accessDate,accessMethod,accessTimes from dim_dataset a left join dim_dataset_detail b on a.datasetId=b.datasetId;
+    </select>
+    
+    <!-- 按owner过滤和排序 -->
+    <select id="selectDataSetByOwner" resultType="DataSet">
+        select a.datasetId,description,owner,administrator,location,dataSize,dataNumber,createDate,updateDate,accessDate,accessMethod,accessTimes from dim_dataset a left join dim_dataset_detail b on a.datasetId=b.datasetId where owner=#{owner};
+    </select>
+    
+    <!-- 按user过滤和排序 -->
+    <select id="selectDataSetByAdministrator" resultType="DataSet">
+        select a.datasetId,description,owner,administrator,location,dataSize,dataNumber,createDate,updateDate,accessDate,accessMethod,accessTimes from dim_dataset a left join dim_dataset_detail b on a.datasetId=b.datasetId where administrator=#{administrator};
+    </select>
+    
+    <!-- 按location过滤和排序 -->
+    <select id="selectDataSetByLocation" resultType="DataSet">
+        select a.datasetId,description,owner,administrator,location,dataSize,dataNumber,createDate,updateDate,accessDate,accessMethod,accessTimes from dim_dataset a left join dim_dataset_detail b on a.datasetId=b.datasetId where location=#{location};
+    </select>
+    
+    <!-- 按id过滤和排序 -->
+    <select id="selectDataSetById" resultType="DataSet">
+        select a.datasetId,description,owner,administrator,location,dataSize,dataNumber,createDate,updateDate,accessDate,accessMethod,accessTimes from dim_dataset a left join dim_dataset_detail b on a.datasetId=b.datasetId where a.datasetId=#{datasetId};
+    </select>
+    
+</mapper>

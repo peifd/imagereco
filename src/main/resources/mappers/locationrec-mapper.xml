@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.h3c.bigdata.sc.model.LocationRecMapper">
+
+	<!-- 获取一定数量的记录，不做任何过滤和排序 -->
+    <select id="selectAllRecs" resultType="LocationRec">           <!-- id用于标识这一条SQL,然后在session中调用；resultType用于转换成要保存的对象 -->
+        select * from fact_location limit 1000;
+    </select>
+
+	<!-- 获取一定数量的记录，按userid过滤和时间排序 -->
+    <select id="selectRecByUserid" parameterType="String" resultType="LocationRec">
+        select * from fact_location where userid=#{userid} order by timestamp limit 1000;   <!-- 这个id 表示用seesion的方法调用时传入的参数，并且用parameterType指定参数类型 -->
+    </select>
+
+	<!-- 获取一定数量的记录，根据传入的参数对象过滤 -->    
+    <select id="selectRecByFilter" parameterType="LocationRecFilter" resultType="LocationRec">
+        select * from fact_location 
+        <where>
+        	<if test="userid!=null">
+        		userid=#{userid}
+        	</if>
+        	<if test="timestamp_min!=null">
+        		and timestamp  &gt; '#{timestamp_min}'
+        	</if>       	
+        </where> 
+        order by timestamp limit #{number};  
+        <!-- 用parameterType定义LocationRecFilter的对象作为参数，由此可以对象成员的方式传递多个参数 -->
+        <!-- 使用成员变量时，直接使用成员名字，不用带对象名称 -->
+    </select>
+
+</mapper>

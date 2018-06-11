@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                        http://www.springframework.org/schema/task
+                        http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+    <!-- 自动扫描bean -->
+    <context:component-scan base-package="com.h3c.bigdata">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--<context:property-placeholder file-encoding="UTF-8" location="classpath*:conf/*.properties"/>-->
+
+    <!-- 定义REST客户端工具对象 -->
+    <bean id="ky.requestFactory"
+          class="org.springframework.http.client.SimpleClientHttpRequestFactory">
+        <property name="readTimeout" value="30000"/>
+        <property name="connectTimeout" value="10000"/>
+    </bean>
+    <bean id="simpleRestTemplate" class="org.springframework.web.client.RestTemplate">
+        <constructor-arg ref="ky.requestFactory"/>
+    </bean>
+
+    <!--引入mybatis相关context文件 -->
+    <!--<import resource="classpath:spring/spring-mybatis.xml"/>-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+</beans>

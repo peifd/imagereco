@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <!-- 指定初始化的视图为login.html -->
+    <mvc:view-controller path="/" view-name="login"/>
+
+    <!-- 指定需要扫描的包，即检查该包下面的类是否有@controller的注解标识 -->
+    <context:component-scan base-package="com.h3c.bigdata.sc.controller"/>
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+
+    <!--图片静态资源-->
+    <mvc:resources mapping="/assets/**" location="/WEB-INF/assets/"/>
+    <mvc:resources mapping="/script/**" location="/WEB-INF/script/"/>
+    <mvc:resources mapping="/upload/**" location="/WEB-INF/upload/"/>
+    <mvc:resources mapping="/Image_Transmission/**" location="/WEB-INF/Image_Transmission/"/>
+    <mvc:resources mapping="/ROI_Find/**" location="/WEB-INF/ROI_Find/"/>
+    <mvc:resources mapping="/Invoice_code/**" location="/WEB-INF/Invoice_code/"/>
+    <mvc:resources mapping="/Invoice_number/**" location="/WEB-INF/Invoice_number/"/>
+    <mvc:resources mapping="/Invoice_date/**" location="/WEB-INF/Invoice_date/"/>
+    <mvc:resources mapping="/Invoice_buy/**" location="/WEB-INF/Invoice_buy/"/>
+    <mvc:resources mapping="/Invoice_value/**" location="/WEB-INF/Invoice_value/"/>
+
+    <mvc:resources mapping="/**/*.html" location="/WEB-INF/html/"/>
+
+    <!-- 视图解析器，并指定视图路径为，文件的后缀名为html -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".html"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="requestContextAttribute" value="rc"/>
+    </bean>
+</beans>

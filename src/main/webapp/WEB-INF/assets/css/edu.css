@@ -1,0 +1,202 @@
+body{
+    font-family: "SF Pro Display", "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.btn-danger{
+    background-color: #C80216;
+    border-color: #C80216;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2) inset;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) inset;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+.about .content label {
+    float: left;
+    clear: left;
+    width: 100px;
+    font-weight: bold;
+}
+
+.custom-panel-heading {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+#footer {
+    background-color: #000000;
+    height: 20px;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    clear: both;
+    text-align: center;
+}
+
+#tip {
+    position: absolute;
+    top: 0px;
+    left: 50%;;
+    min-width: 300px;
+    text-align: center;
+    display: none;
+    z-index: 9999
+}
+
+span.required {
+    color: red;
+    font-size: 150%;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    vertical-align: middle;
+}
+
+.modal-dialog .modal-content .modal-header > .modal-title, .modal-dialog .modal-content .about_header > .modal-title {
+    margin: 0;
+    padding-left: 15px;
+    border-left: solid 8px #1D89E6;
+    font-size: 18px;
+    color: #333333;
+}
+
+.modal-dialog .modal-content .modal-header, .modal-dialog .modal-content .about_header {
+    min-height: 16.43px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 0;
+    background-color: #ECF0F0;
+    color: #333333;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    margin-right: 15px;
+    border: 0;
+}
+
+.dataset_panel .box {
+    position: relative;
+    z-index: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 3px 8px -6px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    border-width: 1px;
+    border-style: none;
+    border-color: rgba(0, 0, 0, 0.137255);
+}
+
+.dataset_panel .box .cell_list li img {
+    border: 0px;
+    height: 100px;
+    width: 60%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.dataset_panel .box .cell_list li {
+    cursor: pointer;
+    transition: all 0.5s;
+    z-index:200;
+}
+
+.dataset_panel .box .cell_list li:hover {
+    transform: scale(1.055);
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.dataset_panel .box .cell_list li {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    float: left;
+    width: 23%;
+    height: 370px;
+    padding: 20px 10px;
+    text-align: center;
+    position: relative;
+    border: solid 1px;
+    background-color: #F5F5F5;
+    margin: 10px 10px 10px 10px;
+    overflow: hidden;
+}
+
+.dataset_panel .info {
+    margin-top: 18px;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.dataset_panel li .platform {
+    position: absolute;
+    width: 100%;
+    top: 320px;
+    left: 0;
+    text-align: center;
+}
+
+.xuanfu{
+    display:inline-block;
+    text-align:center;
+    width:150px;
+    height:20%;
+    position:relative;
+    top:37%;
+    left:44%;
+    transform:rotate(315deg);
+    -ms-transform: rotate(46deg);
+    -moz-transform: rotate(46deg);
+    -webkit-transform: rotate(46deg);
+    -o-transform: rotate(315deg);
+    border:1px dashed;
+    background: #57DD43;
+    font-weight:bolder;
+}
+
+

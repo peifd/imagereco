@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+
+body {
+	background: #000000;
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	opacity:1;
+}
+
+.content-sub {
+	background-color: rgba(0, 0, 0, 0);      /* 0.4 为透明度40% */
+	height:100px;
+	width:100px;
+	
+	boder:solid rgb(100,100,100) 1px;   /* 边界线形 */ 
+	overflow: hidden;  /* div内部图片、文字溢出时的处理方法，hidden表示溢出不显示  */
+	float:left;
+	padding: 5px;
+	margin:10px;
+	opacity:1;
+}
+
+.content-sub img {
+	border-radius:20px;   /* 边角弧度  */
+	height:100%;
+	width:100%; 
+	padding: 0px;
+	margin: 0px;
+
+}
+
+table tr:nth-child(even)
+{
+	background: #ccc;   /* 设置偶数行的背景颜色，计数行用odd */
+}
+table thead
+{
+	font-weight: bold;
+}
+
+table tr:hover
+{
+	background: #abc456;
+}
+	
+.linkText
+{
+	color:black;
+	font-size:13px;	
+	margin:0px 0px 0px 0px;	
+	padding:0px 0px 0px 0px;
+	cursor: pointer;
+	text-decoration:none;	
+}
+
+.linkText:hover
+{
+	text-decoration:underline;
+	color:red;
+}
+
+.popbox
+{
+	display:none;
+}
+	
+table tr:hover .popbox
+{
+	display:block;
+	position:absolute;
+	width:200px;
+	background-color:#424242;
+	color:#fff;
+	margin:10px 10px 10px 10px;	
+	padding:10px 10px 10px 10px;
+	/* transform: translate(20%,-80%);    位置偏移 */ 
+	left: 100px;
+	top: 200px;
+	opacity:0.6;
+	z-index: 3;
+	text-align:center;
+	/* transition: visibility 0s linear .2s,opacity .2s linear 0s; */
+}
