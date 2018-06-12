@@ -20,10 +20,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class ImageController {
-
-    /**
-     * 日志
-     */
     private static final Logger LOGGER = LoggerFactory.getLogger(ImageController.class);
 
     @Autowired
