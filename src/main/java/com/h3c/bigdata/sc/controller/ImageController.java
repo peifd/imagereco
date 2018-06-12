@@ -15,9 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 图像识别controller
+ */
 @Controller
 public class ImageController {
 
+    /**
+     * 日志
+     */
     private static final Logger LOGGER = LoggerFactory.getLogger(ImageController.class);
 
     @Autowired
